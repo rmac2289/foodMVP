@@ -1,0 +1,179 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+header {
+    background: none;
+    margin-bottom: 50px;
+}
+header > h1 {
+    font-size: 80px;
+    padding-left:5%;
+    padding-top: 8%;
+    margin-bottom: 0;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: bolder;
+    letter-spacing: .1em;
+    padding-bottom: 0;
+    
+  }
+header > h2 {
+    margin-left: 8%;
+    padding-left: 5%;
+    font-weight: 900;
+    margin-bottom: 50px;
+}
+.intro {
+    background: black;
+    color: white;
+    padding: 1% 2%;
+    width: 50%;
+    margin-left: 2%;
+    line-height: 1.5em;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url('./food2.jpg');
+    background-size: cover;
+  }
+iframe {
+    
+}
+
+#caloriesID, #dietID {
+    font-size: 1.35em;
+    color: green;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: .06em;
+
+}
+#eat {
+    font-size: 1.5em;
+    color: green;
+}
+#not {
+    color: rgb(167, 11, 11);
+    font-size: 1.35em;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: .06em;
+
+   
+}
+main {
+    display: flex;
+    justify-content: center;
+}
+.formList {
+    list-style: none;
+    padding-left: 2%;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+#diet, #exclude {
+    width: 220px;
+    padding-left: 1%;
+}
+#calories,#diet,#exclude {
+    font-size: 20px;
+    height: 50px;
+}
+#calories {
+    width: 100px;
+}
+form, .section1 {
+    background: none;
+}
+select {
+    opacity: .7;
+    border: 3px solid olivedrab;
+}
+input {
+    width: 250px;
+    height: 25px;
+    border: 3px solid olivedrab;
+    padding: .75%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    opacity: .7;
+    color: black;
+}
+button {
+    width: 95%;
+    min-height: 125px;
+    font-size: 2em;
+    font-weight: bolder;
+    margin: auto 2%;
+    line-height: 1.5em;
+    border-top-left-radius: 1%;
+    border-top-right-radius: 1%;
+}
+.button {
+    background-position: center;
+    color: black;
+    border: 3px solid olivedrab;
+    opacity: .8;
+}
+button:hover {
+    cursor: pointer;
+    background-image: url('./5d0a88512500004e12e94a01.jpeg');
+    transition: .5s;
+    color: white;
+    
+}
+img {
+    width: 50px;
+    height: 50px;
+}
+.funFact {
+    text-align: center;
+}
+p{
+    text-align: left;
+}
+footer {
+   
+   align-self: flex-end;
+    width: 50%;
+    background: lightgrey;
+}
+
+.formSection, .section2 {
+    max-height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.section2 {
+    width: 35%;
+    margin-right: auto;
+    margin-left: 0;
+}
+.formSection {
+    background: none;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+.section2 {
+    background: none;
+}
+.mealList {
+    border: 3px solid black;
+    list-style: none;
+}
+.meal {
+    color: black;
+    font-weight: 900;
+    text-decoration: none;
+}
+.mealLink {
+    text-decoration: none;
+}
+.mealLink:hover {
+    text-decoration: underline;
+}
+@media only screen and (max-width: 720px){
+    
+}
+
