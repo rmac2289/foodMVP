@@ -1,17 +1,22 @@
+
 * {
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    
 }
 header {
+    width: 100%;
     background: none;
     margin-bottom: 50px;
+    background-image: url('./food2.jpg');
+    background-size: cover;
 }
 header > h1 {
     font-size: 80px;
     padding-left:5%;
     padding-top: 8%;
+    margin-top: 75px;
     margin-bottom: 0;
-    font-family: 'Bebas Neue', cursive;
     font-weight: bolder;
     letter-spacing: .1em;
     padding-bottom: 0;
@@ -24,22 +29,18 @@ header > h2 {
     margin-bottom: 50px;
 }
 .intro {
-    background: black;
-    color: white;
     padding: 1% 2%;
-    width: 50%;
+    width: 45%;
     margin-left: 2%;
     line-height: 1.5em;
+    font-size: 18px;
 }
 body {
     display: flex;
     flex-direction: column;
-    background-image: url('./food2.jpg');
-    background-size: cover;
-  }
-iframe {
-    
-}
+    border: none;
+    margin: 0;
+    }
 
 #caloriesID, #dietID {
     font-size: 1.35em;
@@ -57,8 +58,13 @@ iframe {
     font-size: 1.35em;
     font-family: 'Bebas Neue', cursive;
     letter-spacing: .06em;
-
-   
+}
+.ingredientForm {
+    display: flex;
+    flex-direction: column;
+}
+form {
+    display: flex;
 }
 main {
     display: flex;
@@ -69,6 +75,7 @@ main {
     padding-left: 2%;
     font-size: 1.5em;
     font-weight: bolder;
+    width: 80%
 }
 #diet, #exclude {
     width: 220px;
@@ -81,12 +88,27 @@ main {
 #calories {
     width: 100px;
 }
-form, .section1 {
-    background: none;
-}
+
 select {
     opacity: .7;
     border: 3px solid olivedrab;
+}
+.underHeader {
+    display: flex;
+    justify-content: space-between;
+}
+.intro2 {
+    width: 40%;
+    margin-right: 2%;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+}
+#ingredient {
+    height: 40px;
+}
+#arrow {
+    height:100px;
+    width: 100px;
 }
 input {
     width: 250px;
@@ -98,7 +120,7 @@ input {
     opacity: .7;
     color: black;
 }
-button {
+.button {
     width: 95%;
     min-height: 125px;
     font-size: 2em;
@@ -107,19 +129,21 @@ button {
     line-height: 1.5em;
     border-top-left-radius: 1%;
     border-top-right-radius: 1%;
-}
-.button {
     background-position: center;
     color: black;
     border: 3px solid olivedrab;
     opacity: .8;
 }
-button:hover {
+.button:hover {
     cursor: pointer;
     background-image: url('./5d0a88512500004e12e94a01.jpeg');
+    background-size: cover;
     transition: .5s;
     color: white;
     
+}
+.ingredientButton {
+
 }
 img {
     width: 50px;
@@ -137,16 +161,17 @@ footer {
     width: 50%;
     background: lightgrey;
 }
-
-.formSection, .section2 {
-    max-height: 80%;
+.hidden {
+   display: none;
+}
+iframe  {
+    border: none;
+    height: 800px;
+    margin-top: 25px;
+    display: flex;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
-}
-.section2 {
-    width: 35%;
-    margin-right: auto;
-    margin-left: 0;
 }
 .formSection {
     background: none;
@@ -154,13 +179,16 @@ footer {
     margin-right: auto;
     display: flex;
     flex-direction: column;
-}
-.section2 {
-    background: none;
+    max-height: 80%;
 }
 .mealList {
-    border: 3px solid black;
+    padding-top: 2%;
     list-style: none;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.days {
+    font-weight: 900;
 }
 .meal {
     color: black;
@@ -170,10 +198,36 @@ footer {
 .mealLink {
     text-decoration: none;
 }
+.mealWeek {
+    background-image: url('./brooke-lark-08bOYnH_r_E-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+}
 .mealLink:hover {
     text-decoration: underline;
 }
 @media only screen and (max-width: 720px){
-    
+    .underHeader {
+        flex-direction: column;
+    }
+    .intro, .intro2 {
+        width: 95%;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .intro2 > h2 {
+        font-size: 20px;
+        text-align: center;
+    }
 }
+@media only screen and (max-width: 520px){
+    header > h1 {
+        font-size: 50px;
+    }
+    header > h2 {
+        font-size: 1.2em;
+    }
+}
+
 

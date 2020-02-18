@@ -10,15 +10,24 @@
 </head>
 <body>
     <header>
-        <h1>cr<span id="eat">eat</span>e</h1>
-        <h2>YOU'LL NEVER MEAL PLAN ALONE AGAIN</h2>
+        <h1 class="header1">cr<span id="eat">eat</span>e</h1>
+        <h2 class="header1">YOU'LL NEVER MEAL PLAN ALONE AGAIN</h2>
     </header>
     <main>
       <section class="formSection">
-        <section class="intro">
-          <p>The meal generator will take your input and return breakfast, lunch, and dinner for 7 days. Click on the links and they'll take you straight to the recipes so you can get cooking! All fields are optional - if you don't want to narrow it down, it will simply generate 7 days worth of random meals.</p>
-        </section>
-        <form>
+        <div class="underHeader">
+          <section class="intro">
+            <p>The meal generator will take your input and return breakfast, lunch, and dinner for 7 days. Click on the links and they'll take you straight to the recipes so you can get cooking! <br>All fields are optional - if you don't want to narrow it down, it will simply generate 7 days worth of random meals.</p>
+          </section>
+          <section class="intro2">
+            <h2>All out of an ingredient you need for a meal? See if there's a suitable substitute!</h2>
+            <form class="ingredientForm">
+              <input id ="ingredient" type="text" placeholder="butter, milk..">
+              <button name="ingredientButton" id="ingredientButton" type="submit">find substitute</button>
+            </form>
+          </section>
+        </div>
+        <form class="mainForm">
             <div class="formList">
               <p>I'm on a <span>
                 <select name="diet" id="diet">
@@ -34,11 +43,10 @@
                   <option value="Primal">Primal</option>
                   <option value="Whole 30">Whole 30</option>
                 </select></span> <span id="dietID">diet</span>.</p>
-              <p>I want to eat about <span><input id="calories" name="calories" type="number" placeholder="2000" min="0" step="250"></span> <span id="caloriesID">calories</span> per day.</p>
+              <p>I want to eat about <span><input id="calories" name="calories" type="number" placeholder="2000" min="0"></span> <span id="caloriesID">calories</span> per day.</p>
               <p>I do <span id="not">not</span> want to eat any <span><input id="exclude" name="exclude" type="text" placeholder="fish, mushrooms..."></span></p>
-              <button class="button" type="submit">let's get cookin'</button>
+              <button name="mainButton" class="button" type="submit">let's get cookin'</button>
             </div>
-      
         </form>
         <section class="section1">
           <div class="mealWeek">
@@ -46,9 +54,9 @@
           </div>
         </section>
       </section>
-      <iframe name="iframe" class="section2 hidden">
-      </iframe>
     </main>
+    <section class="iframeSection">
+    </section>
     <footer>
 
     </footer>

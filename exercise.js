@@ -15,7 +15,7 @@ function formatQueryParams(params) {
 
 function displayTrivia(responseJson1){
     console.log(responseJson1);
-    $('footer').append(`<h4 class="funFact">Did you know?</h4><p>${responseJson1.text}</p>`)
+    $('.didYouKnow').append(`<p>${responseJson1.text}</p>`)
 }
 /* MEAL PLAN DISPLAY */ 
 
@@ -28,19 +28,19 @@ function displayMealPlan(responseJson2) {
     for (i=0; i < days.length ;i++){
         $('.mealWeek').append(`
         <ul class="mealList">
-            <h3>${days[i]}</h3>
-            <li><h4><a class="mealLink" href="${data[days[i]].meals[0].link}" target="iframe"><span class="meal">breakfast:</span> ${data[days[i]].meals[0].cleanTitle}</a></h4></li>
-            <li><h4><a class="mealLink" href="${data[days[i]].meals[1].link}" target="iframe"><span class="meal">lunch:</span> ${data[days[i]].meals[1].cleanTitle}</a></h4></li>
-            <li><h4><a class="mealLink" href="${data[days[i]].meals[2].link}" target="iframe"><span class="meal">dinner:</span> ${data[days[i]].meals[2].cleanTitle}</a></h4></li>
+            <h3 class="days">${days[i]}</h3>
+            <li><h4><span class="meal">breakfast:</span><a class="mealLink" href="${data[days[i]].meals[0].link}" target="_blank"> ${data[days[i]].meals[0].cleanTitle}</a></h4></li>
+            <li><h4><span class="meal">lunch:</span><a class="mealLink" href="${data[days[i]].meals[1].link}" target="_blank"> ${data[days[i]].meals[1].cleanTitle}</a></h4></li>
+            <li><h4><span class="meal">dinner:</span><a class="mealLink" href="${data[days[i]].meals[2].link}" target="_blank"> ${data[days[i]].meals[2].cleanTitle}</a></h4></li>
         </ul>
-            `);}}
+            `);
+        }}
 
 /* MEAL & TRIVIA FETCH */ 
 
 
-function getAPIS(diet,calories,exclude){
+function getAPIS(diet,calories,exclude,ingredient){
     function paramEditor(){
-    let params; 
     if (diet=='' && calories=='' && exclude==''){
         return params = {
         apiKey: apiKey
@@ -87,13 +87,18 @@ function getAPIS(diet,calories,exclude){
         }
     }
 }
+    const params2 = {
+        ingredientName: ingredient,
+        apiKey: apiKey
+    }
     let paramEdit = paramEditor()
     let newParams = formatQueryParams(paramEdit);
+    let ingredientParams = formatQueryParams(params2)
 
-    const randomURL = `${baseURL}food/trivia/random?apiKey=${apiKey}`
+    const ingredientURL = `${baseURL}food/ingredients/substitutes?${ingredientParams}`
     const mealURL = `${baseURL}mealplanner/generate?${newParams}`
     
-        let firstAPICall = fetch(randomURL);
+        let firstAPICall = fetch(ingredientURL);
         let secondAPICall = fetch(mealURL);
 
       
@@ -102,7 +107,7 @@ function getAPIS(diet,calories,exclude){
           .then(finalVals => {
             let responseJson1 = finalVals[0];
             let responseJson2 = finalVals[1];
-            /* displayTrivia(responseJson1); */
+            console.log(responseJson1); 
             displayMealPlan(responseJson2);
           });
       
@@ -110,9 +115,18 @@ function getAPIS(diet,calories,exclude){
 
 /* ON SUBMITTING FORM FUNCTION */
 
+function ingredientForm(){
+    $('.ingredientForm').submit(event => {
+        event.preventDefault();
+        const ingredient = $('#ingredient').val();
+        getAPIS(ingredient);
+    })
+}
+
 function watchForm() {
     focus();
-    $('form').submit(event => {
+    ingredientForm();
+    $('.mainForm').submit(event => {
         event.preventDefault();
         const diet = $('#diet').val();
         const calories = $('#calories').val();
@@ -130,3 +144,4 @@ function focus(){
 
 
 $(watchForm);
+$(ingredientForm);
