@@ -23,7 +23,8 @@
             <h2>All out of an ingredient you need for a meal? See if there's a suitable substitute!</h2>
             <form class="ingredientForm">
               <input id ="ingredient" type="text" placeholder="butter, milk..">
-              <button name="ingredientButton" id="ingredientButton" type="submit">find substitute</button>
+              <input name="ingredientButton" id="ingredientButton" type="submit" value="find substitute">
+              <ul class="subList"></ul>
             </form>
           </section>
         </div>
@@ -45,7 +46,7 @@
                 </select></span> <span id="dietID">diet</span>.</p>
               <p>I want to eat about <span><input id="calories" name="calories" type="number" placeholder="2000" min="0"></span> <span id="caloriesID">calories</span> per day.</p>
               <p>I do <span id="not">not</span> want to eat any <span><input id="exclude" name="exclude" type="text" placeholder="fish, mushrooms..."></span></p>
-              <button name="mainButton" class="button" type="submit">let's get cookin'</button>
+              <input name="mainButton" class="mainButton" type="submit" value="let's get cookin'">
             </div>
         </form>
         <section class="section1">
