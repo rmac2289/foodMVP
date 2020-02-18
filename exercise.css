@@ -8,8 +8,6 @@ header {
     width: 100%;
     background: none;
     margin-bottom: 50px;
-    background-image: url('./food2.jpg');
-    background-size: cover;
 }
 header > h1 {
     font-size: 80px;
@@ -44,17 +42,18 @@ body {
 
 #caloriesID, #dietID {
     font-size: 1.35em;
-    color: green;
     font-family: 'Bebas Neue', cursive;
     letter-spacing: .06em;
 
 }
 #eat {
     font-size: 1.5em;
-    color: green;
+  
+}
+.formWidth {
+    width: 70%;
 }
 #not {
-    color: rgb(167, 11, 11);
     font-size: 1.35em;
     font-family: 'Bebas Neue', cursive;
     letter-spacing: .06em;
@@ -91,7 +90,7 @@ main {
 
 select {
     opacity: .7;
-    border: 3px solid olivedrab;
+   
 }
 .underHeader {
     display: flex;
@@ -113,14 +112,13 @@ select {
 input {
     width: 250px;
     height: 25px;
-    border: 3px solid olivedrab;
     padding: .75%;
     margin-top: 10px;
     margin-bottom: 10px;
     opacity: .7;
-    color: black;
+ 
 }
-.button {
+.mainButton {
     width: 95%;
     min-height: 125px;
     font-size: 2em;
@@ -130,20 +128,10 @@ input {
     border-top-left-radius: 1%;
     border-top-right-radius: 1%;
     background-position: center;
-    color: black;
-    border: 3px solid olivedrab;
     opacity: .8;
 }
-.button:hover {
+.mainButton:hover {
     cursor: pointer;
-    background-image: url('./5d0a88512500004e12e94a01.jpeg');
-    background-size: cover;
-    transition: .5s;
-    color: white;
-    
-}
-.ingredientButton {
-
 }
 img {
     width: 50px;
@@ -159,7 +147,7 @@ footer {
    
    align-self: flex-end;
     width: 50%;
-    background: lightgrey;
+    
 }
 .hidden {
    display: none;
@@ -191,17 +179,12 @@ iframe  {
     font-weight: 900;
 }
 .meal {
-    color: black;
+    
     font-weight: 900;
     text-decoration: none;
 }
 .mealLink {
     text-decoration: none;
-}
-.mealWeek {
-    background-image: url('./brooke-lark-08bOYnH_r_E-unsplash.jpg');
-    background-size: cover;
-    background-position: center;
 }
 .mealLink:hover {
     text-decoration: underline;
